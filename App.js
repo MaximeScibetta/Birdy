@@ -10,6 +10,7 @@ const RouterWithRedux = connect()(Router);
 
 
 import Landing from './app/components/Landing';
+import Profile from './app/components/screens/Profile';
 import PageTwo from './app/components/PageTwo';
 import Home from './app/components/Home';
 import Search from './app/components/Search';
@@ -55,16 +56,17 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <RouterWithRedux>
-          <Scene key="root">
+          <Scene key="root" type={ActionConst.RESET}>
               {/* Screen */}
-              <Scene key="login" component={Login} title="Login" initial={true} test={this.state.loggedIn}/>
+            <Scene key="login" type="reset" component={Login} title="Login" initial={true} panHandlers={null}/>
+              <Scene key="landing" component={Landing} title="Landing"/>
+              <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
+              <Scene key="detail" component={Detail} title="Detail"/>
 
               {/* Menu */}
               <Scene key="rootTabBar" tabs={true} tabBarStyle={{ backgroundColor: '#ffffff' }}>
-                  <Scene key="landing" component={Landing} title="Landing"/>
-                  <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
-                  <Scene key="detail" component={Detail} title="Detail"/>
                   <Scene key="home" component={Home} title="Home" icon={TabIcon} initial />
+                  <Scene key="profile" component={Profile} title="Profile" icon={TabIcon} />
                   <Scene key="search" component={Search} title="Search" icon={TabIcon} />
               </Scene>
           </Scene>
