@@ -6,15 +6,17 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import { Form } from './common';
 
 const Login = () => {
     return (
-        <View style={styles.container}>
-            <Text style={styles.welcome}
-                onPress={() => Actions.pop()}>
-                Close Modal
-            </Text>
-        </View>
+        // <View style={styles.container}>
+        //     <Text style={styles.welcome}
+        //         onPress={() => Actions.pop()}>
+        //         Close Modal
+        //     </Text>
+        // </View>
+        <Form />
     )
 }
 

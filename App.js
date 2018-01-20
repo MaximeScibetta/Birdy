@@ -14,6 +14,7 @@ import Home from './app/components/Home';
 import Search from './app/components/Search';
 import Login from './app/components/Login';
 import Detail from './app/components/Detail';
+import firebase from 'firebase';
 
 const TabIcon = ({ selected, title }) => {
   return (
@@ -22,14 +23,38 @@ const TabIcon = ({ selected, title }) => {
 }
 
 export default class App extends Component {
+
+  state = { loggedIn: null }
+
+
+  componentWillMount() {
+    firebase.initializeApp({
+      apiKey: "AIzaSyCwUPc6yBwmDFgwHro4P6upwuOlKS5zkFA",
+      authDomain: "birdy-38cf5.firebaseapp.com",
+      databaseURL: "https://birdy-38cf5.firebaseio.com",
+      projectId: "birdy-38cf5",
+      storageBucket: "birdy-38cf5.appspot.com",
+      messagingSenderId: "528897884384"
+    });
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ loggedIn: true });
+      }
+      else {
+        this.setState({ loggedIn: false });
+      }
+    });
+  }
+
   render() {
     return (
       <Provider store={store}>
         <RouterWithRedux>
           <Scene key="root">
-            <Scene key="landing" component={Landing} title="Landing" initial={true} />
+            <Scene key="landing" component={Landing} title="Landing" />
             <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
-            <Scene key="login" component={Login} title="Login" />
+            <Scene key="login" component={Login} title="Login" initial={true} />
             <Scene
               key="rootTabBar"
               tabs={true}

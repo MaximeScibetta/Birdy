@@ -19,7 +19,7 @@ class Landing extends Component {
             <View style={styles.outerContainer}>
                 <Text>
                     The current scene is titled {this.props.routes.scene.title}.
-        </Text>
+                </Text>
                 <Text onPress={Actions.rootTabBar}>Go to Home page</Text>
                 <Text onPress={Actions.login}>Open modal</Text>
             </View>
