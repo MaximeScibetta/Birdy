@@ -4,10 +4,10 @@ const initialState = {
     scene: {},
 };
 
-export default function reducer(state = initialstate, action = {}){
+export default function reducer(state = initialState, action = {}){
     switch (action.type) {
         case ActionConst.FOCUS:
-            console.log(action)
+        console.log(action)
             return {
                 ...state,
                 scene: action.scene,
