@@ -10,15 +10,16 @@ import PropTypes from 'prop-types';
 
 class Detail extends Component {
     static contextTypes = {
-        routes: PropTypes
+        routes: PropTypes.object,
     };
     render() {
         const { routes } = this.context;
+        console.log(this.props)
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Detail</Text>
-                <Text onPress={routes.pop}>
-                    The params: {this.props.text}
+                <Text onPress={() => Actions.pop()}>
+                    The params: {this.props.title}
                 </Text>
             </View>
         )

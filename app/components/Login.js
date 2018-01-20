@@ -10,12 +10,6 @@ import { Form } from './common';
 
 const Login = () => {
     return (
-        // <View style={styles.container}>
-        //     <Text style={styles.welcome}
-        //         onPress={() => Actions.pop()}>
-        //         Close Modal
-        //     </Text>
-        // </View>
         <Form />
     )
 }

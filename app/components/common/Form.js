@@ -13,7 +13,7 @@ class Form extends Component {
         const { email, password } = this.state;
 
         firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(Actions.landing)
+            .then(Actions.rootTabBar)
             .catch(() => {
                 this.setState({
                     error: 'Problème Chef',

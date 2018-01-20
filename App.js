@@ -3,6 +3,7 @@ import { Text, StyleSheet } from "react-native";
 import { Router, Scene } from 'react-native-router-flux';
 import { connect, Provider } from 'react-redux';
 import configureStore from './app/store/configureStore';
+import { ActionConst } from 'react-native-router-flux';
 
 const store = configureStore()
 const RouterWithRedux = connect()(Router);
@@ -15,6 +16,7 @@ import Search from './app/components/Search';
 import Login from './app/components/Login';
 import Detail from './app/components/Detail';
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 
 const TabIcon = ({ selected, title }) => {
   return (
@@ -40,8 +42,10 @@ export default class App extends Component {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ loggedIn: true });
+        console.log('login', this.state)
       }
       else {
+        console.log('not')
         this.setState({ loggedIn: false });
       }
     });
@@ -52,16 +56,17 @@ export default class App extends Component {
       <Provider store={store}>
         <RouterWithRedux>
           <Scene key="root">
-            <Scene key="landing" component={Landing} title="Landing" />
-            <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
-            <Scene key="login" component={Login} title="Login" initial={true} />
-            <Scene
-              key="rootTabBar"
-              tabs={true}
-              tabBarStyle={{ backgroundColor: '#ffffff' }}>
-              <Scene key="home" component={Home} title="Home" icon={TabIcon} initial />
-              <Scene key="search" component={Search} title="Search" icon={TabIcon} />
-            </Scene>
+              {/* Screen */}
+              <Scene key="login" component={Login} title="Login" initial={true} test={this.state.loggedIn}/>
+
+              {/* Menu */}
+              <Scene key="rootTabBar" tabs={true} tabBarStyle={{ backgroundColor: '#ffffff' }}>
+                  <Scene key="landing" component={Landing} title="Landing"/>
+                  <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
+                  <Scene key="detail" component={Detail} title="Detail"/>
+                  <Scene key="home" component={Home} title="Home" icon={TabIcon} initial />
+                  <Scene key="search" component={Search} title="Search" icon={TabIcon} />
+              </Scene>
           </Scene>
         </RouterWithRedux>
       </Provider>

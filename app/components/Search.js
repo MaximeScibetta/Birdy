@@ -11,12 +11,13 @@ class Search extends Component {
 
     render() {
         const { routes } = this.context;
-        const goToDetail = () => Actions.detail({ text: this.props.routes.scene.title });
 
+        const goToDetail = () => Actions.detail({ text: this.props.title });
+        console.log(this.props)
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Search</Text>
-                <Text onPress={goToDetail}>Go to Detail with {this.props.routes.scene.title}</Text>
+                <Text onPress={goToDetail}>Go to Detail with {this.props.title}</Text>
             </View>
         )
     }
