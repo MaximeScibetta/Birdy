@@ -11,6 +11,7 @@ const RouterWithRedux = connect()(Router);
 import Profile from './app/components/screens/Profile';
 import Feed from './app/components/screens/Feed';
 import MyFeed from './app/components/screens/MyFeed';
+import Bibli from './app/components/screens/Bibli';
 
 import Landing from './app/components/Landing';
 import PageTwo from './app/components/PageTwo';
@@ -74,6 +75,7 @@ export default class App extends Component {
               {/* Menu */}
               <Scene key="rootTabBar" tabs={true} tabBarStyle={{ backgroundColor: '#ffffff' }}>
                   <Scene key="home" component={Home} title="Accueil" icon={TabIcon} initial />
+                  <Scene key="bibli" component={Bibli} title="Encyclopédie" icon={TabIcon}  />
                   <Scene key="profile" component={Profile} title="Profile" icon={TabIcon} />
                   <Scene key="search" component={Search} title="Recherche" icon={TabIcon} />
                   <Scene key="feed" component={Feed} title="Fil d'actualité" icon={TabIcon} />

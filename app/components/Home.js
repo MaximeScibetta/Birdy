@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
-//import FloatingActionButton from 'react-native-action-button';
+import FloatingActionButton from 'react-native-action-button';
 // import MapView from 'react-native-maps';
 import PropTypes from 'prop-types';
 
@@ -21,10 +21,10 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Home</Text>
-        {/* <FloatingActionButton
+        <FloatingActionButton
         hideShadow={true} // this is to avoid a bug in the FAB library.
         buttonColor="rgba(231,76,60,1)"
-        onPress={Actions.login} /> */}
+        onPress={Actions.login} />
         {/* <MapView
           style={styles.map}
           region={{
