@@ -24,7 +24,7 @@ class Home extends Component {
         <FloatingActionButton
         hideShadow={true} // this is to avoid a bug in the FAB library.
         buttonColor="rgba(231,76,60,1)"
-        onPress={Actions.login} />
+        onPress={Actions.addBird} />
         {/* <MapView
           style={styles.map}
           region={{

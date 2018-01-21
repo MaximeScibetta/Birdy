@@ -14,7 +14,7 @@ import MyFeed from './app/components/screens/MyFeed';
 import Bibli from './app/components/screens/Bibli';
 
 import Landing from './app/components/Landing';
-import PageTwo from './app/components/PageTwo';
+import AddBird from './app/components/AddBird';
 import Home from './app/components/Home';
 import Search from './app/components/Search';
 import Login from './app/components/Login';
@@ -67,9 +67,9 @@ export default class App extends Component {
         <RouterWithRedux>
           <Scene key="root" type={ActionConst.RESET}>
               {/* Screen */}
-            <Scene key="login" type="reset" component={Login} title="Login" initial={true}/>
+            <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
-              <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
+              <Scene key="addBird" component={AddBird} title="Ajouter un oiseau" />
               <Scene key="detail" component={Detail} title="Detail"/>
 
               {/* Menu */}
