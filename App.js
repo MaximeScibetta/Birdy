@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 import { Router, Scene } from 'react-native-router-flux';
 import { connect, Provider } from 'react-redux';
 import configureStore from './app/store/configureStore';
@@ -8,20 +8,28 @@ import { ActionConst } from 'react-native-router-flux';
 const store = configureStore()
 const RouterWithRedux = connect()(Router);
 
+import Profile from './app/components/screens/Profile';
+import Feed from './app/components/screens/Feed';
+import MyFeed from './app/components/screens/MyFeed';
 
 import Landing from './app/components/Landing';
-import Profile from './app/components/screens/Profile';
 import PageTwo from './app/components/PageTwo';
 import Home from './app/components/Home';
 import Search from './app/components/Search';
 import Login from './app/components/Login';
 import Detail from './app/components/Detail';
+
+
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 
+
 const TabIcon = ({ selected, title }) => {
   return (
-    <Text style={{ color: selected ? 'red' : 'black' }}>{title}</Text>
+
+    <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' }}>
+      <Text style={{ color: selected ? 'red' : 'black' }} className="nav_title">{title}</Text>
+    </View>
   )
 }
 
@@ -58,17 +66,19 @@ export default class App extends Component {
         <RouterWithRedux>
           <Scene key="root" type={ActionConst.RESET}>
               {/* Screen */}
-            <Scene key="login" type="reset" component={Login} title="Login" initial={true} panHandlers={null}/>
+            <Scene key="login" type="reset" component={Login} title="Login" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
               <Scene key="pageTwo" component={PageTwo} title="PageTwo" />
               <Scene key="detail" component={Detail} title="Detail"/>
 
               {/* Menu */}
               <Scene key="rootTabBar" tabs={true} tabBarStyle={{ backgroundColor: '#ffffff' }}>
-                  <Scene key="home" component={Home} title="Home" icon={TabIcon} initial />
+                  <Scene key="home" component={Home} title="Accueil" icon={TabIcon} initial />
                   <Scene key="profile" component={Profile} title="Profile" icon={TabIcon} />
-                  <Scene key="search" component={Search} title="Search" icon={TabIcon} />
+                  <Scene key="search" component={Search} title="Recherche" icon={TabIcon} />
+                  <Scene key="feed" component={Feed} title="Fil d'actualité" icon={TabIcon} />
               </Scene>
+
           </Scene>
         </RouterWithRedux>
       </Provider>

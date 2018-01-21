@@ -6,12 +6,16 @@ import {
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import FloatingActionButton from 'react-native-action-button';
 
 const Home = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Home</Text>
-      <Text onPress={Actions.login}>Open modal</Text>
+      <FloatingActionButton
+        hideShadow={true} // this is to avoid a bug in the FAB library.
+        buttonColor="rgba(231,76,60,1)"
+        onPress={Actions.login} />
     </View>
   )
 }
