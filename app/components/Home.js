@@ -7,9 +7,8 @@ import {
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 //import FloatingActionButton from 'react-native-action-button';
-import MapView from 'react-native-maps';
+// import MapView from 'react-native-maps';
 import PropTypes from 'prop-types';
-
 
 class Home extends Component {
   static propTypes = {
@@ -21,12 +20,12 @@ class Home extends Component {
     const { routes } = this.context;
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.welcome}>Home</Text> */}
+        <Text style={styles.welcome}>Home</Text>
         {/* <FloatingActionButton
         hideShadow={true} // this is to avoid a bug in the FAB library.
         buttonColor="rgba(231,76,60,1)"
         onPress={Actions.login} /> */}
-        <MapView
+        {/* <MapView
           style={styles.map}
           region={{
             latitude: 37.78825,
@@ -35,7 +34,8 @@ class Home extends Component {
             longitudeDelta: 0.0121,
           }}
         >
-        </MapView>
+        </MapView> */}
+
       </View>
     )
   }
@@ -54,15 +54,18 @@ const styles = StyleSheet.create({
   //   margin: 10,
   //   color: '#ffffff',
   // },
+  // container: {
+  //   ...StyleSheet.absoluteFillObject,
+  //   height: 400,
+  //   width: 400,
+  //   justifyContent: 'flex-end',
+  //   alignItems: 'center',
+  // },
+  // map: {
+  //   ...StyleSheet.absoluteFillObject,
+  // },
   container: {
-    ...StyleSheet.absoluteFillObject,
-    height: 400,
-    width: 400,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  map: {
-    ...StyleSheet.absoluteFillObject,
+    flex: 1,
   },
 })
 
