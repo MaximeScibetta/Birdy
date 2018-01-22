@@ -9,7 +9,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 class AddBirdForm extends Component {
     state = {
         how: '', 
-        when: '',
+        date: ''  ,
         where: {
             lat: '',
             long: '',
@@ -32,6 +32,7 @@ class AddBirdForm extends Component {
 
     // }
     render() {
+        console.log(this.state)
         return (
             <ScrollView>
                 <View>
@@ -40,7 +41,7 @@ class AddBirdForm extends Component {
                         mode="dropdown"
                         selectedValue={this.state.how}
                         onValueChange={(itemValue, itemIndex) => this.setState({ how: itemValue })}>
-                        <Picker.Item label="Sé" value="nid" />
+                        <Picker.Item label="Sélectionnez..." value="null" />
                         <Picker.Item label="Au nid" value="nid" />
                         <Picker.Item label="Au filet" value="filet" />
                         <Picker.Item label="A la cânne à pèche" value="canne" />
@@ -120,36 +121,43 @@ class AddBirdForm extends Component {
                     debounce={0} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
                 />
                 <Field
+                    keyboardType='default'
                     label='Nom latin'
                     placeholder='rougus gorus'
                     value={this.state.latin_name}
                     onChangeText={text => this.setState({ latin_name: text })} />
                 <Field
+                    keyboardType='default'
                     label='N° de la bague'
                     placeholder='XD428DX187D'
                     value={this.state.ring_nbr}
                     onChangeText={text => this.setState({ ring_nbr: text })} />
                 <Field
+                    keyboardType='numeric'
                     label='N° de série de la bague'
                     placeholder='85186245'
                     value={this.state.ring_nbr_series}
                     onChangeText={text => this.setState({ ring_nbr_series: text })} />
                 <Field
+                    keyboardType='numeric'
                     label='Longueur alair'
                     placeholder='235mm'
                     value={this.state.length}
                     onChangeText={text => this.setState({ length: text })} />
                 <Field
+                    keyboardType='numeric'
                     label='Niveau de graisse'
                     placeholder='0.52%'
                     value={this.state.lvl}
                     onChangeText={text => this.setState({ lvl: text })} />
                 <Field
+                    keyboardType='numeric'
                     label='Sexe'
                     placeholder='Mâle'
                     value={this.state.sexe}
                     onChangeText={text => this.setState({ sexe: text })} />
                 <Field
+                    keyboardType='numeric'
                     label='Âge'
                     placeholder='35ans'
                     value={this.state.years}

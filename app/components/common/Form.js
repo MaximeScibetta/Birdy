@@ -26,12 +26,14 @@ class Form extends Component {
         return (
             <View>
                 <Field
+                    keyboardType="email-address"
                     label='Email'
                     placeholder='votreAdresse@email.com'
                     value={this.state.email}
                     onChangeText={text => this.setState({ email: text })} />
 
                 <Field
+                    keyboardType="default"
                     // autoCorrect={false}
                     secureTextEntry
                     label='Mot de passe'
