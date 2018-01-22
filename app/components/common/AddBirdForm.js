@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, Button } from 'react-native';
+import { ScrollView, View, Text, Button, Picker } from 'react-native';
 import { Field, Spinner } from './';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
+import DatePicker from 'react-native-datepicker'
 
 
 class AddBirdForm extends Component {
@@ -31,6 +32,45 @@ class AddBirdForm extends Component {
     render() {
         return (
             <ScrollView>
+                <View>
+                    <Text>Comment l'oiseau a-t-il été capturé </Text>
+                    <Picker
+                        mode="dropdown"
+                        selectedValue={this.state.how}
+                        onValueChange={(itemValue, itemIndex) => this.setState({ how: itemValue })}>
+                        <Picker.Item label="Sé" value="nid" />
+                        <Picker.Item label="Au nid" value="nid" />
+                        <Picker.Item label="Au filet" value="filet" />
+                        <Picker.Item label="A la cânne à pèche" value="canne" />
+                    </Picker>
+                </View>
+                <View>
+                    <Text>Quand l'oiseau a-t-il été capturé </Text>
+                    <DatePicker
+                        style={{ width: 200 }}
+                        date={this.state.date}
+                        mode="date"
+                        placeholder="Sélectionnez une date"
+                        format="DD-MM-YYYY"
+                        minDate="01-01-2018"
+                        maxDate="01-01-2100"
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        customStyles={{
+                            dateIcon: {
+                                position: 'absolute',
+                                left: 0,
+                                top: 4,
+                                marginLeft: 0
+                            },
+                            dateInput: {
+                                marginLeft: 36
+                            }
+                            // ... You can check the source to find the other keys.
+                        }}
+                        onDateChange={(date) => { this.setState({ date: date }) }}
+                    />
+                </View>
                 <Field
                     label='Comment ?'
                     placeholder='Au fillet diagonal'

@@ -7,7 +7,7 @@ import {
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import FloatingActionButton from 'react-native-action-button';
-// import MapView from 'react-native-maps';
+import MapView from 'react-native-maps';
 import PropTypes from 'prop-types';
 
 class Home extends Component {
@@ -25,8 +25,8 @@ class Home extends Component {
         hideShadow={true} // this is to avoid a bug in the FAB library.
         buttonColor="rgba(231,76,60,1)"
         onPress={Actions.addBird} />
-        {/* <MapView
-          style={styles.map}
+        <MapView
+          //style={styles.map}
           region={{
             latitude: 37.78825,
             longitude: -122.4324,
@@ -34,7 +34,7 @@ class Home extends Component {
             longitudeDelta: 0.0121,
           }}
         >
-        </MapView> */}
+        </MapView>
 
       </View>
     )
