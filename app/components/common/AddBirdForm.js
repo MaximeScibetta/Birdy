@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, Button, Picker, Image } from 'react-native';
+import { ScrollView, View, Text, Button, Picker, Image, TouchableWithoutFeedback } from 'react-native';
 import { Field, Spinner } from './';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import DatePicker from 'react-native-datepicker'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { RadioButtons, SegmentedControls } from 'react-native-radio-buttons'
 
 class AddBirdForm extends Component {
     state = {
@@ -25,13 +26,52 @@ class AddBirdForm extends Component {
         loading: false 
     };
 
-    // onButtonPress() {
-    //     this.setState({ error: '', loading: true });
+    onButtonPress() {
+        this.setState({ error: '', loading: true });
 
-    //     const { email, password } = this.state;
+        const { how, date, where, latin_name, ring_nbr, ring_nbr_series, length, lvl, sexe, years } = this.state;
 
-    // }
+        firebase.database().ref('captures/').set({
+            location: where,
+            capture_date: date,
+            type: how,
+            name: latin_name,
+            ring_nbr: ring_nbr,
+            ring_nbr_series: ring_nbr_series,
+            alair_length: length,
+            fat_level: lvl,
+            sexe: sexe,
+            years_old: years
+        })
+
+    }
     render() {
+        const options = [
+            "Mâle",
+            "Femelle"
+        ];
+
+        function setSelectedOption(selectedOption) {
+            this.setState({
+                sexe: selectedOption
+            });
+        }
+
+        function renderOption(option, selected, onSelect, index) {
+            const style = selected ? { color: '#448aff', fontWeight: 'bold' } : {};
+
+            return (
+                <TouchableWithoutFeedback onPress={onSelect} key={index}>
+                    <View>
+                        <Text style={style}>{option}</Text>
+                    </View>
+                </TouchableWithoutFeedback>
+            );
+        }
+
+        function renderContainer(optionNodes) {
+            return <View>{optionNodes}</View>;
+        }
         console.log(this.state)
         return (
             <ScrollView>
@@ -74,52 +114,54 @@ class AddBirdForm extends Component {
                         onDateChange={(date) => { this.setState({ date: date }) }}
                     />
                 </View>
-   
-                <GooglePlacesAutocomplete
-                    placeholder='Rechercher le lieu'
-                    minLength={2} // minimum length of text to search
-                    autoFocus={false}
-                    returnKeyType={'Recherche'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
-                    listViewDisplayed='auto'    // true/false/undefined
-                    fetchDetails={true}
-                    renderDescription={row => row.description} // custom description render
+                <View>
+                    <Text>Où l'oiseau a-t-il été capturé</Text>
+                    <GooglePlacesAutocomplete
+                        placeholder='Rechercher le lieu'
+                        minLength={2} // minimum length of text to search
+                        autoFocus={false}
+                        returnKeyType={'Recherche'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
+                        listViewDisplayed='auto'    // true/false/undefined
+                        fetchDetails={true}
+                        renderDescription={row => row.description} // custom description render
 
-                    // onChangeText = {(data, details = null) => {
-                    //     { text => this.setState({ latin_name: text }) }
-                    // }}
-                    onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
-                        const location = details.geometry.location;
-                        { this.setState({where: location }) }
-                        console.log(this.state)
-                    }}
+                        // onChangeText = {(data, details = null) => {
+                        //     { text => this.setState({ latin_name: text }) }
+                        // }}
+                        onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
+                            const location = details.geometry.location;
+                            { this.setState({ where: location }) }
+                            console.log(this.state)
+                        }}
 
-                    query={{
-                        // available options: https://developers.google.com/places/web-service/autocomplete
-                        key: 'AIzaSyAJ2hQAgN4zT74afdxQUZQiq7oyJiYRdV0',
-                        language: 'fr', // language of the results
-                        types: '(cities)' // default: 'geocode'
-                    }}
+                        query={{
+                            // available options: https://developers.google.com/places/web-service/autocomplete
+                            key: 'AIzaSyAJ2hQAgN4zT74afdxQUZQiq7oyJiYRdV0',
+                            language: 'fr', // language of the results
+                            types: '(cities)' // default: 'geocode'
+                        }}
 
-                    styles={{
-                        textInputContainer: {
-                            width: '100%'
-                        },
-                        description: {
-                            fontWeight: 'bold'
-                        },
-                        predefinedPlacesDescription: {
-                            color: '#1faadb'
-                        }
-                    }}
+                        styles={{
+                            textInputContainer: {
+                                width: '100%'
+                            },
+                            description: {
+                                fontWeight: 'bold'
+                            },
+                            predefinedPlacesDescription: {
+                                color: '#1faadb'
+                            }
+                        }}
 
-                    GooglePlacesSearchQuery={{
-                        // available options for GooglePlacesSearch API : https://developers.google.com/places/web-service/search
-                        rankby: 'distance',
-                    }}
+                        GooglePlacesSearchQuery={{
+                            // available options for GooglePlacesSearch API : https://developers.google.com/places/web-service/search
+                            rankby: 'distance',
+                        }}
 
-                    filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']} // filter the reverse geocoding results by types - ['locality', 'administrative_area_level_3'] if you want to display only cities
-                    debounce={0} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
-                />
+                        filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']} // filter the reverse geocoding results by types - ['locality', 'administrative_area_level_3'] if you want to display only cities
+                        debounce={0} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
+                    />
+                </View>
                 <Field
                     keyboardType='default'
                     label='Nom latin'
@@ -150,23 +192,38 @@ class AddBirdForm extends Component {
                     placeholder='0.52%'
                     value={this.state.lvl}
                     onChangeText={text => this.setState({ lvl: text })} />
-                <Field
-                    keyboardType='numeric'
-                    label='Sexe'
-                    placeholder='Mâle'
-                    value={this.state.sexe}
-                    onChangeText={text => this.setState({ sexe: text })} />
+                <View>
+                    <Text>Sexe</Text>
+                    <RadioButtons
+                        options={options}
+                        onSelection={setSelectedOption.bind(this)}
+                        selectedOption={this.state.sexe}
+                        renderOption={renderOption}
+                        renderContainer={RadioButtons.getViewContainerRenderer({
+                            marginRight: 10,
+                            marginLeft: 10,
+                            marginTop: 10,
+                            marginBottom: 10,
+                            borderRadius: 4,
+                            borderWidth: 2,
+                            borderColor: 'black',
+                            flexDirection: 'row',
+                            justifyContent: 'space-around',
+                            paddingTop: 10,
+                            paddingBottom: 10,
+                        })}
+                    />
+                </View>
                 <Field
                     keyboardType='numeric'
                     label='Âge'
                     placeholder='35ans'
                     value={this.state.years}
                     onChangeText={text => this.setState({ years: text })} />
-
                 <View>
                     <Button
                         title='Ajouter loiseau'
-                        onPress={this.onButtonPress}>
+                        onPress={this.onButtonPress.bind(this)}>
                     </Button>
                 </View>
                 <Text>
