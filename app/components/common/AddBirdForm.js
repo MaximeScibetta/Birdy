@@ -4,6 +4,7 @@ import { Field, Spinner } from './';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 
+
 class AddBirdForm extends Component {
     state = {
         how: '', 
