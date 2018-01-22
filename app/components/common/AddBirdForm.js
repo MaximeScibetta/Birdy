@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, Button, Picker } from 'react-native';
+import { ScrollView, View, Text, Button, Picker, Image } from 'react-native';
 import { Field, Spinner } from './';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import DatePicker from 'react-native-datepicker'
-
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 class AddBirdForm extends Component {
     state = {
         how: '', 
         when: '',
-        where: '',
+        where: {
+            lat: '',
+            long: '',
+        },
         latin_name: '',
         ring_nbr: '',
         ring_nbr_series: '',
@@ -20,7 +23,7 @@ class AddBirdForm extends Component {
         years: '',
         error: '', 
         loading: false 
-    }
+    };
 
     // onButtonPress() {
     //     this.setState({ error: '', loading: true });
@@ -28,7 +31,6 @@ class AddBirdForm extends Component {
     //     const { email, password } = this.state;
 
     // }
-
     render() {
         return (
             <ScrollView>
@@ -71,21 +73,52 @@ class AddBirdForm extends Component {
                         onDateChange={(date) => { this.setState({ date: date }) }}
                     />
                 </View>
-                <Field
-                    label='Comment ?'
-                    placeholder='Au fillet diagonal'
-                    value={this.state.how}
-                    onChangeText={text => this.setState({ how: text })} />
-                <Field
-                    label='Comment ?'
-                    placeholder='09/09/2017'
-                    value={this.state.when}
-                    onChangeText={text => this.setState({ when: text })} />
-                <Field
-                    label='Où ?'
-                    placeholder='Rue des oiseaux 4052, Liège'
-                    value={this.state.where}
-                    onChangeText={text => this.setState({ where: text })} />
+   
+                <GooglePlacesAutocomplete
+                    placeholder='Rechercher le lieu'
+                    minLength={2} // minimum length of text to search
+                    autoFocus={false}
+                    returnKeyType={'Recherche'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
+                    listViewDisplayed='auto'    // true/false/undefined
+                    fetchDetails={true}
+                    renderDescription={row => row.description} // custom description render
+
+                    // onChangeText = {(data, details = null) => {
+                    //     { text => this.setState({ latin_name: text }) }
+                    // }}
+                    onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
+                        const location = details.geometry.location;
+                        { this.setState({where: location }) }
+                        console.log(this.state)
+                    }}
+
+                    query={{
+                        // available options: https://developers.google.com/places/web-service/autocomplete
+                        key: 'AIzaSyAJ2hQAgN4zT74afdxQUZQiq7oyJiYRdV0',
+                        language: 'fr', // language of the results
+                        types: '(cities)' // default: 'geocode'
+                    }}
+
+                    styles={{
+                        textInputContainer: {
+                            width: '100%'
+                        },
+                        description: {
+                            fontWeight: 'bold'
+                        },
+                        predefinedPlacesDescription: {
+                            color: '#1faadb'
+                        }
+                    }}
+
+                    GooglePlacesSearchQuery={{
+                        // available options for GooglePlacesSearch API : https://developers.google.com/places/web-service/search
+                        rankby: 'distance',
+                    }}
+
+                    filterReverseGeocodingByTypes={['locality', 'administrative_area_level_3']} // filter the reverse geocoding results by types - ['locality', 'administrative_area_level_3'] if you want to display only cities
+                    debounce={0} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
+                />
                 <Field
                     label='Nom latin'
                     placeholder='rougus gorus'
