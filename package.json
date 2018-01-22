@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "firebase": "^4.9.0",
+    "object-assign": "^4.1.1",
     "prop-types": "^15.6.0",
     "react": "16.2.0",
     "react-native": "0.52.0",

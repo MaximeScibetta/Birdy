@@ -27,21 +27,21 @@ class Form extends Component {
             <View>
                 <Field
                     label='Email'
-                    placeholder='example@test.com'
+                    placeholder='votreAdresse@email.com'
                     value={this.state.email}
                     onChangeText={text => this.setState({ email: text })} />
 
                 <Field
                     // autoCorrect={false}
                     secureTextEntry
-                    label='Password'
-                    placeholder='password'
+                    label='Mot de passe'
+                    placeholder='Entrez votre mot de passe'
                     value={this.state.password}
                     onChangeText={password => this.setState({ password })} />
 
                 <View>
                     <Button
-                        title='Log In'
+                        title='Connexion'
                         onPress={this.onButtonPress.bind(this)}>
                     </Button>
                 </View>
