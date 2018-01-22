@@ -6,6 +6,7 @@ import { Actions } from 'react-native-router-flux';
 import DatePicker from 'react-native-datepicker'
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { RadioButtons, SegmentedControls } from 'react-native-radio-buttons'
+import nanoid from 'nanoid'
 
 class AddBirdForm extends Component {
     state = {
@@ -30,8 +31,9 @@ class AddBirdForm extends Component {
         this.setState({ error: '', loading: true });
 
         const { how, date, where, latin_name, ring_nbr, ring_nbr_series, length, lvl, sexe, years } = this.state;
+        const captureId = nanoId();
 
-        firebase.database().ref('captures/').set({
+        firebase.database().ref('captures/' + captureId).set({
             location: where,
             capture_date: date,
             type: how,
