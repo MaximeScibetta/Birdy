@@ -13,7 +13,6 @@ class Search extends Component {
         const { routes } = this.context;
 
         const goToDetail = () => Actions.detail({ text: this.props.title });
-        console.log(this.props)
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Search</Text>

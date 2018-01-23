@@ -1,27 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { View, ScrollView, StyleSheet, Button, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import firebase from 'firebase';
+import {CaptureCard} from '../common/CaptureCard'
+var _ = require('lodash');
 
 
 class Feed extends Component{
 
-    componentWillMount(){
+    
 
-        firebase.database().ref("captures/")
-            .on("value", (snapshot) => {
-                this.setState(snapshot.val())
-            });
-            
+    constructor(props){
+        super(props)
+        this.state = { captures: [], log: false };
     }
 
-    render(){
-        console.log(this.state)
+        componentDidMount(){
+                let capturesRef = firebase.database().ref("captures/");
+                capturesRef.on("value",
+                    snapshot => { this.setState({ captures: Object.values( snapshot.val() ) })})
+        }
+
+        renderCaptures(){
+            return Object.values(this.state.captures).map((data, i) => 
+                <CaptureCard key={i} capture={data} />,
+            )
+        }
+    render() {
+        // console.log(this.state)
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>Fil d'actualité</Text>
-            </View>
+            <ScrollView>
+                {this.renderCaptures()}
+            </ScrollView>
         )
     }
 }

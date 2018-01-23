@@ -14,7 +14,6 @@ class Detail extends Component {
     };
     render() {
         const { routes } = this.context;
-        console.log(this.props)
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>Detail</Text>
