@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
 import { Field, Spinner } from './';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
@@ -41,10 +41,16 @@ class Form extends Component {
                     value={this.state.password}
                     onChangeText={password => this.setState({ password })} />
 
-                <View>
+                <View style={styles.button}>
                     <Button
                         title='Connexion'
                         onPress={this.onButtonPress.bind(this)}>
+                    </Button>
+                </View>
+                <View style={styles.button}>
+                    <Button
+                        title="S'inscre"
+                        onPress={Actions.signup}>
                     </Button>
                 </View>
                 <Text>
@@ -55,5 +61,17 @@ class Form extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#997F3D',
+    },
+    button: {
+        marginTop: 20,
+    },
+})
 
 export { Form };

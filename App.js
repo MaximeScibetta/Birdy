@@ -19,6 +19,7 @@ import Home from './app/components/Home';
 import Search from './app/components/Search';
 import Login from './app/components/Login';
 import Detail from './app/components/Detail';
+import SignUp from './app/components/SignUp';
 
 
 import firebase from 'firebase';
@@ -68,7 +69,8 @@ export default class App extends Component {
             <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
               <Scene key="addBird" component={AddBird} title="Ajouter un oiseau" />
-              <Scene key="detail" component={Detail} title="Detail"/>
+              <Scene key="detail" component={Detail} title="Detail" />
+              <Scene key="signup" component={SignUp} title="Inscription" />
 
               {/* Menu */}
               <Scene key="rootTabBar" tabs={true} tabBarStyle={{ backgroundColor: '#ffffff' }}>
