@@ -20,17 +20,16 @@ import Search from './app/components/Search';
 import Login from './app/components/Login';
 import Detail from './app/components/Detail';
 import SignUp from './app/components/SignUp';
-
+import Icon from 'react-native-vector-icons/FontAwesome.js';
 
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 
 
-const TabIcon = ({ selected, title }) => {
+const TabIcon = ({ selected, title, image }) => {
   return (
-
     <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', alignSelf: 'center', justifyContent: 'center' }}>
-      <Text style={{ color: selected ? 'red' : 'black' }} className="nav_title">{title}</Text>
+      <Icon size={20} name={image} />
     </View>
   )
 }
@@ -66,7 +65,7 @@ export default class App extends Component {
         <RouterWithRedux>
           <Scene key="root" type={ActionConst.RESET}>
               {/* Screen */}
-            <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
+              <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
               <Scene key="addBird" component={AddBird} title="Ajouter un oiseau" />
               <Scene key="detail" component={Detail} title="Detail" />
@@ -74,11 +73,11 @@ export default class App extends Component {
 
               {/* Menu */}
               <Scene key="rootTabBar" tabs={true} tabBarStyle={{ backgroundColor: '#ffffff' }}>
-                  <Scene key="home" component={Home} title="Accueil" icon={TabIcon} initial />
-                  <Scene key="bibli" component={Bibli} title="Encyclopédie" icon={TabIcon}  />
-                  <Scene key="profile" component={Profile} title="Profile" icon={TabIcon} />
-                  <Scene key="search" component={Search} title="Recherche" icon={TabIcon} />
-                  <Scene key="feed" component={Feed} title="Fil d'actualité" icon={TabIcon} />
+              <Scene key="home" component={Home} title="Accueil" image="home" icon={TabIcon} initial />
+                  <Scene key="bibli" component={Bibli} title="Encyclopédie" image="book" icon={TabIcon}  />
+              <Scene key="profile" component={Profile} title="Profile" image="user" icon={TabIcon} />
+              <Scene key="search" component={Search} title="Recherche" image="search" icon={TabIcon} />
+                  <Scene key="feed" component={Feed} title="Fil d'actualité" image="reorder" icon={TabIcon} />
               </Scene>
 
           </Scene>
