@@ -1,6 +1,6 @@
 import React, { Component } from 'React';
 import { connect } from 'react-redux';
-import { FlatList, Text, ScrollView, View, Button } from 'react-native';
+import { FlatList, Text, ScrollView, View, Button, StyleSheet } from 'react-native';
 import ListItem from './ListItem';
 import Sound from 'react-native-sound';
 
@@ -51,7 +51,6 @@ class EncyclopediaList extends Component {
                 <Text> Heure: {data.time} </Text>
                 <View>
                     <Button title="écouter le son" onPress={() => this.playTrack(data.file) } />
-                    {/* <Button title="Mettre en pause" onPress={this.stopTrack()} /> */}
                 </View>
             </View>
         )
@@ -59,12 +58,25 @@ class EncyclopediaList extends Component {
 
     render(){
         return(
-            <View>
+            <ScrollView style={styles.container}>
                 {this.renderListItems()}
-            </View>                
+            </ScrollView>                
         )
     }
 }
+
+const styles = StyleSheet.create({
+    floatBtn: {
+        zIndex: 0,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+    },
+    container: {
+        position: 'relative',
+    }
+})
+
 export default connect(({ routes }) => ({ routes }))(EncyclopediaList)
 
 //     renderRow(singleLibrary) {

@@ -7,6 +7,8 @@ import EncyclopediaList from '../common/EncyclopediaList';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../../reducers';
+import FloatingActionButton from 'react-native-action-button';
+
 
 class Bibli extends Component {
 
@@ -14,6 +16,11 @@ class Bibli extends Component {
         return (
             <Provider store={createStore(reducers)}>
                 <View>
+                    <FloatingActionButton
+                        style={styles.floatBtn}
+                        hideShadow={true} // this is to avoid a bug in the FAB library.
+                        buttonColor="rgba(231,76,60,1)"
+                        onPress={() => console.log('btn')} />
                     <Text>Okiii</Text>
                     <EncyclopediaList />
                 </View>
@@ -24,18 +31,9 @@ class Bibli extends Component {
 
 
 const styles = StyleSheet.create({
-    // container: {
-    //     flex: 1,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     backgroundColor: '#bb0000',
-    // },
-    // welcome: {
-    //     fontSize: 20,
-    //     textAlign: 'center',
-    //     margin: 10,
-    //     color: '#ffffff',
-    // }
+    floatBtn: {
+        zIndex: 10,
+    },
 })
 
 export default connect(({ routes }) => ({ routes }))(Bibli)

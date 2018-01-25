@@ -60,6 +60,7 @@ class Home extends Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>Home</Text>
         <FloatingActionButton
+        style={styles.index}
         hideShadow={true} // this is to avoid a bug in the FAB library.
         buttonColor="rgba(231,76,60,1)"
         onPress={Actions.addBird} />
@@ -372,6 +373,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  index: {
+    zIndex: 10,
+  }
 })
 
 export default connect(state => ({
