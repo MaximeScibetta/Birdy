@@ -25,9 +25,32 @@ class Home extends Component {
         latitudeDelta: 0.015,
         longitudeDelta: 0.0121,
       },
-      markers: {
-
-      }
+      markers: [
+        {
+          latlng: {
+            latitude: 50.6407423,
+            longitude: 5.571124999999938,
+          },
+          title: 'Place Cathédrale',
+          description: 'Ca marche comme un pro !'
+        },
+        {
+          latlng: {
+            latitude: 50.6285652,
+            longitude: 5.576686900000027,
+          },
+          title: 'Parc de la Boverie',
+          description: 'Ca marche comme un pro !'
+        },
+        {
+          latlng: {
+            latitude: 50.6387832,
+            longitude: 5.578821199999993,
+          },
+          title: 'Aquarium Museum',
+          description: 'Ca marche comme un pro !'
+        }
+      ]
     }
   }
 
@@ -49,7 +72,15 @@ class Home extends Component {
             longitudeDelta: 0.0121,
           }}
           customMapStyle={mapStyle}
-        />
+        >
+          {this.state.markers.map(marker => (
+            <MapView.Marker
+              coordinate={marker.latlng}
+              title={marker.title}
+              description={marker.description}
+            />
+          ))}
+        </MapView>
       </View>
     )
   }
