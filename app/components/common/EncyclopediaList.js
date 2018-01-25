@@ -9,6 +9,7 @@ class EncyclopediaList extends Component {
     constructor(props){
         super(props)
         this.state = { list: [], loading: false };
+        this.sound = new Sound('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
     }
 
     componentDidMount(){
@@ -20,14 +21,23 @@ class EncyclopediaList extends Component {
 
     }
 
-    playTrack = () => {
-        const track = new Sound('http://www.xeno-canto.org/334312/download', null, (e) => {
-            if (e) {
-                console.log('error loading track:', e)
-            } else {
-                track.play()
+    componentWillUnmount() {
+        //gets called, but doesn't stop playing
+        this.sound.stop();
+        this.sound.release();
+    }
+
+    
+    playTrack(url){
+        this.sound.stop();
+        this.sound = new Sound(`http:${url}`, null, (e) => {
+            if(e){
+                console.log(e)
+                return;
+            }else{
+                this.sound.play();                
             }
-        })
+        });
     }
 
     renderListItems(){
@@ -39,13 +49,15 @@ class EncyclopediaList extends Component {
                 <Text> Type: {data.type} </Text>
                 <Text> Date: {data.date} </Text>
                 <Text> Heure: {data.time} </Text>
-                <Button title="play me" onPress={this.playTrack} />
+                <View>
+                    <Button title="écouter le son" onPress={() => this.playTrack(data.file) } />
+                    {/* <Button title="Mettre en pause" onPress={this.stopTrack()} /> */}
+                </View>
             </View>
         )
     }
 
     render(){
-        console.log(this.state)
         return(
             <View>
                 {this.renderListItems()}
