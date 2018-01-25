@@ -1,7 +1,8 @@
 import React, { Component } from 'React';
 import { connect } from 'react-redux';
-import { FlatList, Text, ScrollView, View } from 'react-native';
+import { FlatList, Text, ScrollView, View, Button } from 'react-native';
 import ListItem from './ListItem';
+import Sound from 'react-native-sound';
 
 class EncyclopediaList extends Component {
 
@@ -19,6 +20,16 @@ class EncyclopediaList extends Component {
 
     }
 
+    playTrack = () => {
+        const track = new Sound('http://www.xeno-canto.org/334312/download', null, (e) => {
+            if (e) {
+                console.log('error loading track:', e)
+            } else {
+                track.play()
+            }
+        })
+    }
+
     renderListItems(){
         return this.state.list.map((data, i) => 
             <View>
@@ -28,6 +39,7 @@ class EncyclopediaList extends Component {
                 <Text> Type: {data.type} </Text>
                 <Text> Date: {data.date} </Text>
                 <Text> Heure: {data.time} </Text>
+                <Button title="play me" onPress={this.playTrack} />
             </View>
         )
     }
