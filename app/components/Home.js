@@ -26,28 +26,33 @@ class Home extends Component {
         buttonColor="rgba(231,76,60,1)"
         onPress={Actions.addBird} />
         <MapView
-          //style={styles.map}
-          region={{
+          style={styles.map}
+          initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
             latitudeDelta: 0.015,
             longitudeDelta: 0.0121,
           }}
-        >
-        </MapView>
-
+        />
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   backgroundColor: '#bb0000',
-  // },
+  container: {
+    // flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    // backgroundColor: '#bb0000',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
   // welcome: {
   //   fontSize: 20,
   //   textAlign: 'center',
@@ -61,9 +66,13 @@ const styles = StyleSheet.create({
   //   justifyContent: 'flex-end',
   //   alignItems: 'center',
   // },
-  // map: {
-  //   ...StyleSheet.absoluteFillObject,
-  // },
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
   container: {
     flex: 1,
   },
