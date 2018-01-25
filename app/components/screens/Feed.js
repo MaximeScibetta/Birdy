@@ -9,24 +9,23 @@ var _ = require('lodash');
 
 class Feed extends Component{
 
-    
 
     constructor(props){
         super(props)
         this.state = { captures: [], log: false };
     }
 
-        componentDidMount(){
-                let capturesRef = firebase.database().ref("captures/");
-                capturesRef.on("value",
-                    snapshot => { this.setState({ captures: Object.values( snapshot.val() ) })})
-        }
+    componentDidMount(){
+            let capturesRef = firebase.database().ref("captures/");
+            capturesRef.on("value",
+                snapshot => { this.setState({ captures: Object.values( snapshot.val() ) })})
+    }
 
-        renderCaptures(){
-            return Object.values(this.state.captures).map((data, i) => 
-                <CaptureCard key={i} capture={data} />,
-            )
-        }
+    renderCaptures(){
+        return Object.values(this.state.captures).map((data, i) => 
+            <CaptureCard key={i} capture={data} />,
+        )
+    }
     render() {
         // console.log(this.state)
         return (

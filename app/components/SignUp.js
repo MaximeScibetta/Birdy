@@ -31,11 +31,6 @@ class SignUp extends Component {
         this.setState({ error: '', loading: true });
         const { email, password, name } = this.state;
 
-        // firebase.auth().createUserWithEmailAndPassword(email, password, name, location)
-        //     .then(this.onLoginSuccess.bind(this))
-        //     .then(Actions.login)
-        //     .catch(this.onLoginFail.bind(this));
-
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(function (user) {
                 var ref = firebase.database().ref().child("user");

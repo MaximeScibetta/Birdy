@@ -5,15 +5,37 @@ import { Actions } from 'react-native-router-flux'
 import firebase from 'firebase';
 
 class Profile extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = { 
+            id: '',
+            email: '',
+            password: '',
+            name: '',
+        }
+    }
+
     onButtonPress(){
         firebase.auth().signOut()
             .then(Actions.login)
      }
 
+     componentDidMount(){
+         var user = firebase.auth().currentUser;
+         console.log(user)
+         this.setState({ 
+             id: user.id,
+             email: user.email
+        } )
+     }
+
      render(){
+         console.log(this.state)
          return (
              <View style={styles.container}>
                  <Text style={styles.welcome}>Mon profile</Text>
+                <Text>{this.state.email}</Text>
                  <Button
                      onPress={this.onButtonPress}
                      title='Se deconnecter'>
