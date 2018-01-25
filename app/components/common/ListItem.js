@@ -9,25 +9,25 @@ import * as actions from '../../actions';
 // Nous récupérons le contenu passé lors de l'appel de ce composant.
 class ListItem extends Component {
 
+    state = { datas: [] };
     // Animation du composant à chaque Update
     componentWillUpdate() {
         LayoutAnimation.spring();
     }
-
-    renderContent() {
-        const { selectedLibraryId } = this.props;
-        const { id, description } = this.props.content.item;
-
-        // Si l'ID du composant (LibraryId) est === à l'Id sélectionné (selectedLibraryId)
-        if (id === selectedLibraryId) {
-            return (
-                <Text>
+        renderContent() {
+            const { selectedLibraryId } = this.props;
+            const { id, description } = this.props.content.item;
+            
+            // Si l'ID du composant (LibraryId) est === à l'Id sélectionné (selectedLibraryId)
+            if (id === selectedLibraryId) {
+                return (
+                    <Text>
                     {description}
                 </Text>
             )
         }
     }
-
+    
     render() {
         return (
             <TouchableWithoutFeedback

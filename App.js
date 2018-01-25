@@ -73,10 +73,10 @@ export default class App extends Component {
 
               {/* Menu */}
               <Scene key="rootTabBar" tabs={true} tabBarStyle={{ backgroundColor: '#ffffff' }}>
-              <Scene key="home" component={Home} title="Accueil" image="home" icon={TabIcon} initial />
+                  <Scene key="home" component={Home} title="Accueil" image="home" icon={TabIcon} initial />
                   <Scene key="bibli" component={Bibli} title="Encyclopédie" image="book" icon={TabIcon}  />
-              <Scene key="profile" component={Profile} title="Profile" image="user" icon={TabIcon} />
-              <Scene key="search" component={Search} title="Recherche" image="search" icon={TabIcon} />
+                  <Scene key="profile" component={Profile} title="Profile" image="user" icon={TabIcon} />
+                  <Scene key="search" component={Search} title="Recherche" image="search" icon={TabIcon} />
                   <Scene key="feed" component={Feed} title="Fil d'actualité" image="reorder" icon={TabIcon} />
               </Scene>
 

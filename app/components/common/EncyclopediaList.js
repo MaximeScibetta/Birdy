@@ -1,32 +1,66 @@
 import React, { Component } from 'React';
 import { connect } from 'react-redux';
-import { FlatList, Text } from 'react-native';
+import { FlatList, Text, ScrollView, View } from 'react-native';
 import ListItem from './ListItem';
 
 class EncyclopediaList extends Component {
 
-    // renderRow est une fonction d'aide qui retourne un composant ListItem. On passe à cette fonction un paramètre lors de l'appel. Ce paramètre contient les données du state. On passe ensuite ce paramètre comme props lors de l'appel du composant.
-    renderRow(singleLibrary) {
-        return <ListItem content={singleLibrary} />
-    };
+    constructor(props){
+        super(props)
+        this.state = { list: [], loading: false };
+    }
 
-    // On retourne la FlatList avec deux props les données. Grâce au this qui fait référence au composant LibraryList auquel nous avons donné accès au store via notre connect(), nous pouvons maintenant accéder aux données du state grace à this.props
-    render() {
-        return (
-            <FlatList
-                data={this.props.encyclopedia}
-                renderItem={this.renderRow}
-            />
-        );
+    componentDidMount(){
+        const datas = fetch('https://www.xeno-canto.org/api/2/recordings?query=bearded%20bellbird%20q:A');
+
+        datas
+            .then(data => data.json())
+            .then(data => this.setState({ list: data.recordings }));
+
+    }
+
+    renderListItems(){
+        return this.state.list.map((data, i) => 
+            <View>
+                <Text> Nom: {data.en} </Text>
+                <Text> Localisation: {data.loc} </Text>
+                <Text> Pays: {data.cnt} </Text>
+                <Text> Type: {data.type} </Text>
+                <Text> Date: {data.date} </Text>
+                <Text> Heure: {data.time} </Text>
+            </View>
+        )
+    }
+
+    render(){
+        console.log(this.state)
+        return(
+            <View>
+                {this.renderListItems()}
+            </View>                
+        )
     }
 }
+export default connect(({ routes }) => ({ routes }))(EncyclopediaList)
 
-// Crée une fonction utilitaire qui va liée les différents paramètres du state vers des props. On retourne un objet dans lequel sera stocké une partie du state global pour être utilisé comme props.
-const mapStateToProps = state => {
-    return { encyclopedia: state.encyclopedia }
+//     renderRow(singleLibrary) {
+//         return <ListItem content={singleLibrary} />
+//     };
 
-}
+//     render() {
+//         return (
+//             <FlatList
+//                 data={this.props.encyclopedia}
+//                 renderItem={this.renderRow}
+//             />
+//         );
+//     }
+// }
 
-// Lorsque l'on rend notre composant disponible pour le reste de l'application, on passe à la fonction connect notre fonction d'aide précédemment créé avec les paramètres de connexion. Cette fonction en appelle une autre qui connectera finalement le composant au store. C'est donc un double appel de fonction avec un passage du mode de connexion (qu'est-ce qu'on récupère ?) et les objets connectés (qui se connecte à quoi ?)
-export default connect(mapStateToProps)(EncyclopediaList);
+// const mapStateToProps = state => {
+//     return { encyclopedia: state.encyclopedia }
+
+// }
+
+// export default connect(mapStateToProps)(EncyclopediaList);
 
