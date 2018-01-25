@@ -23,7 +23,6 @@ class Profile extends Component {
 
      componentDidMount(){
          var user = firebase.auth().currentUser;
-         console.log(user)
          this.setState({ 
              id: user.id,
              email: user.email
@@ -31,7 +30,6 @@ class Profile extends Component {
      }
 
      render(){
-         console.log(this.state)
          return (
              <View style={styles.container}>
                  <Text style={styles.welcome}>Mon profile</Text>

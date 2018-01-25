@@ -8,7 +8,8 @@ class EncyclopediaList extends Component {
 
     constructor(props){
         super(props)
-        this.state = { list: [], loading: false };
+        // this.props.isPlaying = false;
+        this.state = { list: [], loading: false, isPlaying: false };
         this.sound = new Sound('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
     }
 
@@ -35,9 +36,25 @@ class EncyclopediaList extends Component {
                 console.log(e)
                 return;
             }else{
+                this.setState({isPlaying: true});
                 this.sound.play();                
             }
         });
+    }
+    stopTrack(){
+        this.setState({ isPlaying: false });
+        this.sound.stop()
+    }
+    renderButtons(url){
+        if (this.state.isPlaying) {
+            return (
+                <Button title="Mettre le son acutel en pause" onPress={() => this.stopTrack()} />
+            )
+        }else{
+            return(
+                <Button title="écouter le son" onPress={() => this.playTrack(url)} />
+            )
+        }
     }
 
     renderListItems(){
@@ -50,13 +67,14 @@ class EncyclopediaList extends Component {
                 <Text> Date: {data.date} </Text>
                 <Text> Heure: {data.time} </Text>
                 <View>
-                    <Button title="écouter le son" onPress={() => this.playTrack(data.file) } />
+                    {this.renderButtons(data.file)}
                 </View>
             </View>
         )
     }
 
     render(){
+        console.log(this.state.isPlaying)
         return(
             <ScrollView style={styles.container}>
                 {this.renderListItems()}
