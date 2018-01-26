@@ -18,7 +18,7 @@ import AddBird from './app/components/AddBird';
 import Home from './app/components/Home';
 import Search from './app/components/Search';
 import Login from './app/components/Login';
-import Detail from './app/components/Detail';
+import UpdateBirds from './app/components/UpdateBirds';
 import SignUp from './app/components/SignUp';
 import Icon from 'react-native-vector-icons/FontAwesome.js';
 
@@ -68,7 +68,7 @@ export default class App extends Component {
               <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
               <Scene key="addBird" component={AddBird} title="Ajouter un oiseau" />
-              <Scene key="detail" component={Detail} title="Detail" updateItem={false}/>
+              <Scene key="detail" component={UpdateBirds} title="Modifier votre capture" updateItem={false}/>
               <Scene key="signup" component={SignUp} title="Inscription" />
 
               {/* Menu */}
