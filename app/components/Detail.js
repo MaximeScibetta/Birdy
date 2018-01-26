@@ -81,7 +81,6 @@ class Detail extends Component {
         function renderContainer(optionNodes) {
             return <View>{optionNodes}</View>;
         }
-        console.log(this.props.updateItem)
         const { routes } = this.context;
         return (
             <ScrollView>
