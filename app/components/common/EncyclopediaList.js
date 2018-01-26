@@ -1,14 +1,14 @@
 import React, { Component } from 'React';
 import { connect } from 'react-redux';
-import { FlatList, Text, ScrollView, View, Button, StyleSheet } from 'react-native';
-import ListItem from './ListItem';
+import { Text, ScrollView, View, Button, StyleSheet } from 'react-native';
+// import ListItem from './ListItem';
 import Sound from 'react-native-sound';
+import MapView from 'react-native-maps';
 
 class EncyclopediaList extends Component {
 
     constructor(props){
         super(props)
-        // this.props.isPlaying = false;
         this.state = { list: [], loading: false, isPlaying: false };
         this.sound = new Sound('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
     }
@@ -23,7 +23,6 @@ class EncyclopediaList extends Component {
     }
 
     componentWillUnmount() {
-        //gets called, but doesn't stop playing
         this.sound.stop();
         this.sound.release();
     }
@@ -69,12 +68,21 @@ class EncyclopediaList extends Component {
                 <View>
                     {this.renderButtons(data.file)}
                 </View>
+                <MapView
+                    liteMode
+                    style={styles.map}
+                    initialRegion={{
+                        latitude: parseInt(this.state.list[i].lat),
+                        longitude: parseInt(this.state.list[i].lng),
+                        latitudeDelta: 2.015,
+                        longitudeDelta: 2.0121,
+                    }}
+                />
             </View>
         )
     }
 
     render(){
-        console.log(this.state.isPlaying)
         return(
             <ScrollView style={styles.container}>
                 {this.renderListItems()}
@@ -92,29 +100,12 @@ const styles = StyleSheet.create({
     },
     container: {
         position: 'relative',
+    },
+    map: {
+        height: 200,
+        marginVertical: 50,
     }
 })
 
 export default connect(({ routes }) => ({ routes }))(EncyclopediaList)
-
-//     renderRow(singleLibrary) {
-//         return <ListItem content={singleLibrary} />
-//     };
-
-//     render() {
-//         return (
-//             <FlatList
-//                 data={this.props.encyclopedia}
-//                 renderItem={this.renderRow}
-//             />
-//         );
-//     }
-// }
-
-// const mapStateToProps = state => {
-//     return { encyclopedia: state.encyclopedia }
-
-// }
-
-// export default connect(mapStateToProps)(EncyclopediaList);
 

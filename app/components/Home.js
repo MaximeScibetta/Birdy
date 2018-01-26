@@ -86,6 +86,8 @@ class Home extends Component {
     )
   }
 }
+
+
 const mapStyle = [
   {
     "elementType": "geometry",
