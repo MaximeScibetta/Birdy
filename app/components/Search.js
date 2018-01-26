@@ -3,20 +3,59 @@ import {
     View,
     Text,
     StyleSheet,
+    Button,
 } from 'react-native';
+import { Field } from './common'
+import { CaptureCard } from './common/CaptureCard'
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import firebase from 'firebase';
 
 class Search extends Component {
 
-    render() {
-        const { routes } = this.context;
+    state = {
+        query: '',
+        results: [],
+    }
 
-        const goToDetail = () => Actions.detail({ text: this.props.title });
+    searchUser(){
+        firebase.database().ref("user/").orderByChild('name')
+            .startAt(this.state.query)
+            .endAt(this.state.query + "\uf8ff")
+            .once("value", snapshot => {
+                this.setState({ results: Object.values(snapshot.val()) })
+            })
+    }
+
+    renderResults() {
+        if (this.state.results.length != 0) {
+            return Object.values(this.state.results).map((data, i) =>
+                <View>
+                    <Text>{data.name}</Text>
+                    <Text>{data.email}</Text>
+                    <Button title="voir le profil"></Button>
+                </View>
+            )
+        } else {
+            return <Text>Votre recherche n'a trouvé aucune utilisateur</Text>
+        }
+    }
+
+    render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>Search</Text>
-                <Text onPress={goToDetail}>Go to Detail with {this.props.title}</Text>
+            <View>
+                <Field
+                    keyboardType="default"
+                    label='Recherche des utilisateurs'
+                    placeholder="Le nom exacte de l'utilistateur ..."
+                    value={this.state.query}
+                    onChangeText={text => this.setState({ query: text })} />
+                <Button
+                    title="Rechercher"
+                    onPress={() => this.searchUser()}>></Button>
+                <View>
+                    {this.renderResults()}
+                </View>
             </View>
         )
     }

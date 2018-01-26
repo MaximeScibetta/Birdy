@@ -49,7 +49,7 @@ class Form extends Component {
                 </View>
                 <View style={styles.button}>
                     <Button
-                        title="S'inscre"
+                        title="S'inscrire"
                         onPress={Actions.signup}>
                     </Button>
                 </View>
