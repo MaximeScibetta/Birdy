@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
+import { Actions, ActionConst } from 'react-native-router-flux';
 
 const CaptureCard = (props) => {
     return (
@@ -10,7 +11,7 @@ const CaptureCard = (props) => {
             <Text>{props.capture.years_old}</Text>
             <Text>{props.capture.sexe}</Text>
             <Text>{props.capture.userID}</Text>
-            <Button title="Modifier"></Button>
+            <Button title="Modifier" onPress={Actions.detail({ type: ActionConst.Type, data: props.capture})}></Button>
         </View>
     )
 }

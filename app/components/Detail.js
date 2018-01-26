@@ -13,6 +13,7 @@ class Detail extends Component {
         routes: PropTypes.object,
     };
     render() {
+        console.log(this.props)
         const { routes } = this.context;
         return (
             <View style={styles.container}>

@@ -68,7 +68,7 @@ export default class App extends Component {
               <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
               <Scene key="addBird" component={AddBird} title="Ajouter un oiseau" />
-              <Scene key="detail" component={Detail} title="Detail" />
+              <Scene key="detail" component={Detail} title="Detail" data={false}/>
               <Scene key="signup" component={SignUp} title="Inscription" />
 
               {/* Menu */}
@@ -77,7 +77,7 @@ export default class App extends Component {
                   <Scene key="bibli" component={Bibli} title="Encyclopédie" image="book" icon={TabIcon}  />
                   <Scene key="profile" component={Profile} title="Profile" image="user" icon={TabIcon} />
                   <Scene key="search" component={Search} title="Recherche" image="search" icon={TabIcon} />
-                  <Scene key="feed" component={Feed} title="Fil d'actualité" image="reorder" icon={TabIcon} />
+                  <Scene key="feed" component={Feed} title="Fil d'actualité" image="reorder" icon={TabIcon}/>
               </Scene>
 
           </Scene>
