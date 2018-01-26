@@ -6,13 +6,13 @@ import firebase from 'firebase';
 class CaptureCard extends Component {
 
      renderButton(capture) {
-        if (capture.userID == firebase.auth().currentUser.uid){
+        if (capture.user.id == firebase.auth().currentUser.uid){
             return(
                 <Button title="Modifier" onPress={() => Actions.detail({ type: ActionConst.Type, updateItem: capture })}></Button>
             )
         } else {
             return(
-                <Text>Par {capture.userID}</Text>
+                <Text>Par {capture.user.name}</Text>
             )
         }
     }

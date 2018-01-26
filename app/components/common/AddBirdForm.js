@@ -10,7 +10,7 @@ import nanoid from 'nanoid';
 
 class AddBirdForm extends Component {
     state = {
-        uid: firebase.auth().currentUser.uid,
+        userData: {},
         how: '', 
         date: ''  ,
         where: {
@@ -27,16 +27,20 @@ class AddBirdForm extends Component {
         error: '', 
         loading: false 
     };
+    componentWillMount(){
+        let userId = firebase.auth().currentUser.uid;
+        firebase.database().ref("user/" + userId).on("value", snapshot => { this.setState({ userData: snapshot.val()}) })
 
+    }
     onButtonPress() {
         this.setState({ error: '', loading: true });
 
-        const { uid, how, date, where, latin_name, ring_nbr, ring_nbr_series, length, lvl, sexe, years } = this.state;
+        const { userData, how, date, where, latin_name, ring_nbr, ring_nbr_series, length, lvl, sexe, years } = this.state;
         const captureId = nanoid();
-
+       
         firebase.database().ref('captures/' + captureId).set({
             id: captureId,
-            userID: uid,
+            user: userData,
             location: where,
             capture_date: date,
             type: how,
