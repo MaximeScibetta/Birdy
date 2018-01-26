@@ -1,44 +1,63 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet,Button } from 'react-native'
+import { ScrollView, View, Text, StyleSheet,Button } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import firebase from 'firebase';
+import { CaptureCard } from '../common/CaptureCard'
 
 class Profile extends Component {
 
     constructor(props){
         super(props)
         this.state = { 
-            id: '',
-            email: '',
-            password: '',
-            name: '',
+           user: {},
+           myCaptures: [],
         }
     }
 
+    componentDidMount() {
+        let userId = firebase.auth().currentUser.uid;
+        firebase.database().ref("user/" + userId).on("value", snapshot => { this.setState({ user: snapshot.val() } ) })
+
+
+        firebase.database().ref("captures/").orderByChild("user/id").equalTo(userId).on("value", snapshot => {
+            if(snapshot.val() != null){
+                this.setState({ myCaptures: Object.values(snapshot.val()) })
+            }else{
+                return;
+            }
+        });
+    }
     onButtonPress(){
         firebase.auth().signOut()
             .then(Actions.login)
      }
 
-     componentDidMount(){
-         var user = firebase.auth().currentUser;
-         this.setState({ 
-             id: user.id,
-             email: user.email
-        } )
-     }
+    renderCaptures() {
+        if(this.state.myCaptures.length != 0){
+            return Object.values(this.state.myCaptures).map((data, i) =>
+                <CaptureCard key={i} capture={data} />,
+            )
+        }else{
+            return <Text>Vous n'avez pas encore de capture</Text>
+        }
+    }
 
      render(){
+        console.log(this.state.myCaptures)
          return (
-             <View style={styles.container}>
-                 <Text style={styles.welcome}>Mon profile</Text>
-                <Text>{this.state.email}</Text>
-                 <Button
-                     onPress={this.onButtonPress}
-                     title='Se deconnecter'>
-                 </Button>
-             </View>
+             <ScrollView>
+                <Text>Le profile de {this.state.user.name}</Text>
+                 <Text>Votre adresse email : {this.state.user.email}</Text>
+                 <Text>Votre mot de passe: {this.state.user.password}</Text>
+                <Button
+                    onPress={this.onButtonPress}
+                    title='Se deconnecter'>
+                </Button>
+                <View>
+                    {this.renderCaptures()}
+                </View>
+             </ScrollView>
          )
      }
 }
