@@ -68,7 +68,7 @@ export default class App extends Component {
               <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
               <Scene key="addBird" component={AddBird} title="Ajouter un oiseau" />
-              <Scene key="detail" component={Detail} title="Detail" data={false}/>
+              <Scene key="detail" component={Detail} title="Detail" updateItem={false}/>
               <Scene key="signup" component={SignUp} title="Inscription" />
 
               {/* Menu */}

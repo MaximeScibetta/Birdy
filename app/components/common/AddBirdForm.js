@@ -35,6 +35,7 @@ class AddBirdForm extends Component {
         const captureId = nanoid();
 
         firebase.database().ref('captures/' + captureId).set({
+            id: captureId,
             userID: uid,
             location: where,
             capture_date: date,
