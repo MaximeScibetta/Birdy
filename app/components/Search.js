@@ -8,7 +8,7 @@ import {
 import { Field } from './common'
 import { CaptureCard } from './common/CaptureCard'
 import { connect } from 'react-redux';
-import { Actions } from 'react-native-router-flux';
+import { Actions, ActionConst } from 'react-native-router-flux';
 import firebase from 'firebase';
 
 class Search extends Component {
@@ -33,7 +33,7 @@ class Search extends Component {
                 <View>
                     <Text>{data.name}</Text>
                     <Text>{data.email}</Text>
-                    <Button title="voir le profil"></Button>
+                    <Button title="voir le profil" onPress={() => Actions.searchprofile({ type: ActionConst.Type, user: data })}></Button>
                 </View>
             )
         } else {
@@ -42,6 +42,7 @@ class Search extends Component {
     }
 
     render() {
+        console.log(this.state)
         return (
             <View>
                 <Field

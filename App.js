@@ -13,6 +13,7 @@ import Feed from './app/components/screens/Feed';
 import MyFeed from './app/components/screens/MyFeed';
 import Bibli from './app/components/screens/Bibli';
 
+import SearchProfile from './app/components/SearchProfile';
 import Landing from './app/components/Landing';
 import AddBird from './app/components/AddBird';
 import Home from './app/components/Home';
@@ -68,7 +69,8 @@ export default class App extends Component {
               <Scene key="login" type="reset" component={Login} title="Se connecter" initial={true}/>
               <Scene key="landing" component={Landing} title="Landing"/>
               <Scene key="addBird" component={AddBird} title="Ajouter un oiseau" />
-              <Scene key="detail" component={UpdateBirds} title="Modifier votre capture" updateItem={false}/>
+              <Scene key="detail" component={UpdateBirds} title="Modifier votre capture" updateItem={false} />
+              <Scene key="searchprofile" component={SearchProfile} title="Profile rechercher" user={false} />
               <Scene key="signup" component={SignUp} title="Inscription" />
 
               {/* Menu */}
