@@ -11,13 +11,11 @@ import PropTypes from 'prop-types';
 
 class Detail extends Component {
     state = {
-        uid: firebase.auth().currentUser.uid,
+        uid: this.props.updateItem.userID,
+        captureId: this.props.updateItem.id,
         how: this.props.updateItem.type,
         date: this.props.updateItem.capture_date,
-        where: {
-            lat: this.props.updateItem.location.lat,
-            long: this.props.updateItem.location.lng,
-        },
+        where: this.props.updateItem.location,
         latin_name: this.props.updateItem.name,
         ring_nbr: this.props.updateItem.ring_nbr,
         ring_nbr_series: this.props.updateItem.ring_nbr_series,
@@ -36,24 +34,24 @@ class Detail extends Component {
     onButtonPress() {
         this.setState({ error: '', loading: true });
 
-        const { uid, how, date, where, latin_name, ring_nbr, ring_nbr_series, length, lvl, sexe, years } = this.state;
-        const captureId = nanoid();
+        const { uid, captureId, how, date, where, latin_name, ring_nbr, ring_nbr_series, length, lvl, sexe, years } = this.state;
 
-        firebase.database().ref('captures/' + captureId).set({
-            id: captureId,
-            userID: uid,
-            location: where,
-            capture_date: date,
-            type: how,
-            name: latin_name,
-            ring_nbr: ring_nbr,
-            ring_nbr_series: ring_nbr_series,
-            alair_length: length,
-            fat_level: lvl,
-            sexe: sexe,
-            years_old: years
-        }).then(Actions.rootTabBar)
-
+        let ref = firebase.database().ref('captures/' + captureId);
+        
+        return ref
+            .update({
+                location: where,
+                capture_date: date,
+                type: how,
+                name: latin_name,
+                ring_nbr: ring_nbr,
+                ring_nbr_series: ring_nbr_series,
+                alair_length: length,
+                fat_level: lvl,
+                sexe: sexe,
+                years_old: years
+            })
+            .then(Actions.feed)
     }
 
     render() {
@@ -83,8 +81,7 @@ class Detail extends Component {
         function renderContainer(optionNodes) {
             return <View>{optionNodes}</View>;
         }
-        console.log(this.state)
-        console.log(this.props)
+        console.log(this.props.updateItem)
         const { routes } = this.context;
         return (
             <ScrollView>
