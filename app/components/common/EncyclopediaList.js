@@ -52,7 +52,7 @@ class EncyclopediaList extends Component {
                 <Button
                     raised
                     icon={{ name: 'stop', type: 'font-awesome' }}
-                    title='Mettre le son acutel en pause'
+                    title='Mettre le son actuel en pause'
                     onPress={() => this.stopTrack()}
                     backgroundColor="#ff5723"
                     containerViewStyle={styles.btn} />

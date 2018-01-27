@@ -40,7 +40,7 @@ class Profile extends Component {
                 <CaptureCard key={i} capture={data} />,
             )
         }else{
-            return <Text>Vous n'avez pas encore de capture</Text>
+            return <Text style={{marginTop: 100}}>Vous n'avez pas encore de capture</Text>
         }
     }
 
@@ -59,7 +59,7 @@ class Profile extends Component {
                     onPress={this.onButtonPress}
                     backgroundColor="#2095f3"
                     containerViewStyle={styles.btn} />
-                 <View>
+                 <View style={styles.center}>
                      {this.renderCaptures()}
                  </View>
              </ScrollView>
@@ -83,6 +83,11 @@ const styles = StyleSheet.create({
     },
     btn: {
         marginTop: 20,
+    },
+    center:{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
 

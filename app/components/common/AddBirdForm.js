@@ -245,7 +245,7 @@ class AddBirdForm extends Component {
                 <View>
                     <Button
                         raised
-                        icon={{ name: 'play', type: 'font-awesome' }}
+                        icon={{ name: 'add' }}
                         title='Ajouter loiseau'
                         onPress={this.onButtonPress.bind(this)}
                         backgroundColor="#2095f3"

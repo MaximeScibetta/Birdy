@@ -38,7 +38,7 @@ class Search extends Component {
                 />
             )
         } else {
-            return <Text>Votre recherche n'a trouvé aucune utilisateur</Text>
+            return <Text style={{ marginTop: 10, marginBottom: 10, textAlign: 'center' }}>Votre recherche n'a trouvé aucune utilisateur</Text>
         }
     }
 
@@ -54,12 +54,13 @@ class Search extends Component {
                         placeholder='Entrez votre recherche ...' />
                     <Button
                         raised
+                        icon={{ name: 'search' }}
                         title="Rechercher"
                         onPress={() => this.searchUser()}
                         backgroundColor="#2095f3"
                         containerViewStyle={styles.btn} />
                 </View>
-                <List>
+                <List style={styles.center}>
                     {this.renderResults()}
                 </List>
             </ScrollView>
@@ -83,6 +84,11 @@ const styles = StyleSheet.create({
     btn: {
         marginTop: 20,
     },
+    center: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
 })
 
 export default connect(({ routes }) => ({ routes }))(Search)

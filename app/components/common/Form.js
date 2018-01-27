@@ -38,7 +38,7 @@ class Form extends Component {
                 <View>
                     <FormLabel>Mot de passe</FormLabel>
                     <FormInput
-                        keyboardType="defaults"
+                        keyboardType="default"
                         secureTextEntry
                         placeholder='Entrez votre mot de passe'
                         value={this.state.password}
