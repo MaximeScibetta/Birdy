@@ -1,10 +1,12 @@
 import React, { Component } from 'React';
 import { connect } from 'react-redux';
-import { Text, ScrollView, View, Button, StyleSheet } from 'react-native';
+import { ScrollView, View, StyleSheet, Linking } from 'react-native';
 // import ListItem from './ListItem';
 import Sound from 'react-native-sound';
 import MapView from 'react-native-maps';
 
+
+import { Card, ListItem, Button, List  } from 'react-native-elements'
 class EncyclopediaList extends Component {
 
     constructor(props){
@@ -47,27 +49,32 @@ class EncyclopediaList extends Component {
     renderButtons(url){
         if (this.state.isPlaying) {
             return (
-                <Button title="Mettre le son acutel en pause" onPress={() => this.stopTrack()} />
+                <Button
+                    raised
+                    icon={{ name: 'stop', type: 'font-awesome' }}
+                    title='Mettre le son acutel en pause'
+                    onPress={() => this.stopTrack()}
+                    backgroundColor="#ff5723"
+                    containerViewStyle={styles.btn} />
             )
         }else{
             return(
-                <Button title="écouter le son" onPress={() => this.playTrack(url)} />
+                <Button
+                    raised
+                    icon={{ name: 'play', type: 'font-awesome' }}
+                    title='Écouter le son'
+                    onPress={() => this.playTrack(url)}
+                    backgroundColor="#2095f3"
+                    containerViewStyle={styles.btn} />
             )
         }
     }
 
     renderListItems(){
         return this.state.list.map((data, i) => 
-            <View>
-                <Text> Nom: {data.en} </Text>
-                <Text> Localisation: {data.loc} </Text>
-                <Text> Pays: {data.cnt} </Text>
-                <Text> Type: {data.type} </Text>
-                <Text> Date: {data.date} </Text>
-                <Text> Heure: {data.time} </Text>
-                <View>
-                    {this.renderButtons(data.file)}
-                </View>
+            <Card
+                title={data.en}
+                image={{ uri: 'http://insider.si.edu/wordpress/wp-content/uploads/2017/04/SCTA-copy.jpg'}}>
                 <MapView
                     liteMode
                     style={styles.map}
@@ -78,7 +85,33 @@ class EncyclopediaList extends Component {
                         longitudeDelta: 2.0121,
                     }}
                 />
-            </View>
+                <List>
+                    <ListItem
+                        title={data.loc}
+                        rightIcon={{ name: "location-on" }}
+                    />
+                    <ListItem
+                        title={data.cnt}
+                        rightIcon={{ name: "vpn-lock" }}
+                    />
+                    <ListItem
+                        title={data.date}
+                        rightIcon={{ name: "date-range" }}
+                    />
+                    <ListItem
+                        title={data.time}
+                        rightIcon={{ name: "access-time" }}
+                    />
+                    <ListItem
+                        title="Fiche de descriptive"
+                        leftIcon={{ name: "description" }}
+                        onPressRightIcon={() => Linking.openURL(data.url)}
+                    />
+                </List>
+                <View>
+                    {this.renderButtons(data.file)}
+                </View>
+            </Card>
         )
     }
 
@@ -103,8 +136,11 @@ const styles = StyleSheet.create({
     },
     map: {
         height: 200,
-        marginVertical: 50,
-    }
+        marginVertical: 20,
+    },
+    btn: {
+        marginTop: 20,
+    },
 })
 
 export default connect(({ routes }) => ({ routes }))(EncyclopediaList)
