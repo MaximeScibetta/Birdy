@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Field, Spinner } from './';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 
+
+import { FormLabel, FormInput, Button, Icon  } from 'react-native-elements'
 class Form extends Component {
     state = { email: '', password: '', error: '', loading: false }
 
@@ -25,34 +27,36 @@ class Form extends Component {
     render() {
         return (
             <View>
-                <Field
+                <View>
+                    <FormLabel>Adresse email</FormLabel>
+                    <FormInput
                     keyboardType="email-address"
-                    label='Email'
                     placeholder='votreAdresse@email.com'
-                    value={this.state.email}
+                    value={this.state.email} 
                     onChangeText={text => this.setState({ email: text })} />
-
-                <Field
-                    keyboardType="default"
-                    // autoCorrect={false}
-                    secureTextEntry
-                    label='Mot de passe'
-                    placeholder='Entrez votre mot de passe'
-                    value={this.state.password}
-                    onChangeText={password => this.setState({ password })} />
-
-                <View style={styles.button}>
-                    <Button
-                        title='Connexion'
-                        onPress={this.onButtonPress.bind(this)}>
-                    </Button>
                 </View>
-                <View style={styles.button}>
-                    <Button
-                        title="S'inscrire"
-                        onPress={Actions.signup}>
-                    </Button>
+                <View>
+                    <FormLabel>Mot de passe</FormLabel>
+                    <FormInput
+                        keyboardType="defaults"
+                        secureTextEntry
+                        placeholder='Entrez votre mot de passe'
+                        value={this.state.password}
+                        onChangeText={password => this.setState({ password })} />
                 </View>
+                <Button
+                    raised
+                    icon={{ name: 'send' }}
+                    title='Connexion'
+                    onPress={this.onButtonPress.bind(this)}
+                    backgroundColor="#2095f3"
+                    containerViewStyle={styles.btn}/>
+                <Button
+                    raised
+                    title="S'inscrire"
+                    onPress={Actions.signup}
+                    backgroundColor="#9c26b0"
+                    containerViewStyle={styles.btn} />
                 <Text>
                     {this.state.message}
                     {this.state.error}
@@ -63,13 +67,7 @@ class Form extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#997F3D',
-    },
-    button: {
+    btn: {
         marginTop: 20,
     },
 })
