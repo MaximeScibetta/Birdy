@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\BirdyRia\react-native-maps\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d95f5b1bce2b702f448e14a5683432f975dd13a8">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\BirdyRia-react-native-maps-unspecified_7c6470d0556c727a9d47a28f5ed2bea73593fd00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_e442fd550b61da4d7a8dabca743c089510c2ca63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="dd1d0d84da2cff18f741c63a9c3af7d9aa89fdd6">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-10.2.4_f5d3b70fa5ca8fca17542bf6cbb8add0b90483fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_608d5e01e60b197703951896d0601f6b8bd21b4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_26731f86e89c7bcf71089070ad3532743bfc0abb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_313f9b56088a61ac5cfbefb524dee538da96ac63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_313f9b56088a61ac5cfbefb524dee538da96ac63.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_19705a915b501afc147d480ceb2e9a27c6b50afb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6d0d5e86f5b7203834df01ed78ebfdd5cbf74d48">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-10.2.4_64a006a5db398690c5aee623b86e08f137063bb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_0e4a7ec1762d44a8abbe04a9eddc79868f0870e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0_f338b683c5d00a69718af2d26af76a060a097b48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a62eec3abda6deebbcd1581c87d3ddd6ee7daf47">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.52.1_31bd4a1f45c5d9879b59420253cf057ccd10a852.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.52.1\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_3a1e46e9d33a30b1fd3a928a531a07edc13c1035.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_5822877ece2218a4ecafc010217a9736678a21d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5803db663655ef5cb38c6bcb17ba326fdb9edfbd">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.2.4_b8b6904e568448dd3371a7a717ba08cc1bc06656.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_cd03da9a1d8017a7ee4c8f1cb61c903d9ec600aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_449c54f1dc82c104fbe3b0997950b8a20b153b4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\BirdyRia\react-native-maps\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d95f5b1bce2b702f448e14a5683432f975dd13a8">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\BirdyRia-react-native-maps-unspecified_7c6470d0556c727a9d47a28f5ed2bea73593fd00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.4_16330110e89d125c6886f65f367db0630d7abdeb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.3.0_bb597d2f6607dbfb24e26029750c0dca9c095b30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="dd1d0d84da2cff18f741c63a9c3af7d9aa89fdd6">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-base-10.2.4_f5d3b70fa5ca8fca17542bf6cbb8add0b90483fc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_adc020e5838d8b083d0e927561a2fbf3643bded9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0_f338b683c5d00a69718af2d26af76a060a097b48.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_3fcea52d6539a32dcac82381feebdd6dc9b27c20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\BirdyRia\react-native-sound\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="7928ca2aee98dbdd5120ff66393d67402b5b719c">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\BirdyRia-react-native-sound-unspecified_1c18ce9a1bd43973716afa9c9e1a0ca3b6310374.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5803db663655ef5cb38c6bcb17ba326fdb9edfbd">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-tasks-10.2.4_b8b6904e568448dd3371a7a717ba08cc1bc06656.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_adafb5e88227f8d075913e4dc6f8ed12e3e39fac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_adc020e5838d8b083d0e927561a2fbf3643bded9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0_fe7480820c20c289a17422f6ee907fbcc1697ea1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_567ebbd99f7e7313b9f5bb59a0f1ab6dc03a62c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_cd03da9a1d8017a7ee4c8f1cb61c903d9ec600aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_adafb5e88227f8d075913e4dc6f8ed12e3e39fac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.3.0_bb597d2f6607dbfb24e26029750c0dca9c095b30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_8069b3a1f37dc3d4dc325bb37536246c4494c7b1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_3fcea52d6539a32dcac82381feebdd6dc9b27c20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_8069b3a1f37dc3d4dc325bb37536246c4494c7b1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9ed08fab37c3a572da1d9ed2bf2e36c8d3e2bc48">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-10.2.4_16330110e89d125c6886f65f367db0630d7abdeb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_d11b7f4cb59f7e35bae38cbccb3761c2f852ea32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.2.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6d0d5e86f5b7203834df01ed78ebfdd5cbf74d48">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-maps-10.2.4_64a006a5db398690c5aee623b86e08f137063bb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_19705a915b501afc147d480ceb2e9a27c6b50afb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_26731f86e89c7bcf71089070ad3532743bfc0abb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_608d5e01e60b197703951896d0601f6b8bd21b4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_449c54f1dc82c104fbe3b0997950b8a20b153b4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_d11b7f4cb59f7e35bae38cbccb3761c2f852ea32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_567ebbd99f7e7313b9f5bb59a0f1ab6dc03a62c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_0d550f706b81537090d8cf0dbd1b4d0f7b1cad34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_5822877ece2218a4ecafc010217a9736678a21d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="C:\Users\Maxime SCIBETTA\Desktop\BirdyRia\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_e442fd550b61da4d7a8dabca743c089510c2ca63.jar" />
+    </item>
+
+</items>
