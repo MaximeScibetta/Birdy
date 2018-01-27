@@ -82,7 +82,6 @@ class AddBirdForm extends Component {
         function renderContainer(optionNodes) {
             return <View>{optionNodes}</View>;
         }
-        console.log(this.state)
         return (
             <ScrollView>
                 <View style={styles.marginItem}>

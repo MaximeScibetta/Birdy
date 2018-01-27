@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, Button, Picker, Image, TouchableWithoutFeedback, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, Picker, Image, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import { Field, Spinner } from './common';
 import firebase from 'firebase';
 import DatePicker from 'react-native-datepicker'
@@ -7,6 +7,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { RadioButtons, SegmentedControls } from 'react-native-radio-buttons'
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
+import { FormLabel, FormInput, Button } from 'react-native-elements'
 import PropTypes from 'prop-types';
 
 class Detail extends Component {
@@ -84,7 +85,7 @@ class Detail extends Component {
         const { routes } = this.context;
         return (
             <ScrollView>
-                <View>
+                <View style={styles.marginItem}>
                     <Text>Comment l'oiseau a-t-il été capturé </Text>
                     <Picker
                         mode="dropdown"
@@ -96,10 +97,10 @@ class Detail extends Component {
                         <Picker.Item label="A la cânne à pèche" value="canne" />
                     </Picker>
                 </View>
-                <View>
+                <View style={styles.marginItem}>
                     <Text>Quand l'oiseau a-t-il été capturé </Text>
                     <DatePicker
-                        style={{ width: 200 }}
+                        style={{ width: 200, marginTop: 10 }}
                         date={this.state.date}
                         mode="date"
                         placeholder="Sélectionnez une date"
@@ -123,8 +124,9 @@ class Detail extends Component {
                         onDateChange={(date) => { this.setState({ date: date }) }}
                     />
                 </View>
-                <View>
-                    <Text>Où l'oiseau a-t-il été capturé</Text>
+                <View style={styles.marginItem}>
+                    <Text
+                        style={{ marginBottom: 10 }}>Où l'oiseau a-t-il été capturé</Text>
                     <GooglePlacesAutocomplete
                         placeholder='Rechercher le lieu'
                         minLength={2} // minimum length of text to search
@@ -133,14 +135,9 @@ class Detail extends Component {
                         listViewDisplayed='auto'    // true/false/undefined
                         fetchDetails={true}
                         renderDescription={row => row.description} // custom description render
-
-                        // onChangeText = {(data, details = null) => {
-                        //     { text => this.setState({ latin_name: text }) }
-                        // }}
                         onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
                             const location = details.geometry.location;
                             { this.setState({ where: location }) }
-                            console.log(this.state)
                         }}
 
                         query={{
@@ -171,38 +168,56 @@ class Detail extends Component {
                         debounce={0} // debounce the requests in ms. Set to 0 to remove debounce. By default 0ms.
                     />
                 </View>
-                <Field
-                    keyboardType='default'
-                    label='Nom latin'
-                    placeholder='rougus gorus'
-                    value={this.state.latin_name}
-                    onChangeText={text => this.setState({ latin_name: text })} />
-                <Field
-                    keyboardType='default'
-                    label='N° de la bague'
-                    placeholder='XD428DX187D'
-                    value={this.state.ring_nbr}
-                    onChangeText={text => this.setState({ ring_nbr: text })} />
-                <Field
-                    keyboardType='numeric'
-                    label='N° de série de la bague'
-                    placeholder='85186245'
-                    value={this.state.ring_nbr_series}
-                    onChangeText={text => this.setState({ ring_nbr_series: text })} />
-                <Field
-                    keyboardType='numeric'
-                    label='Longueur alair'
-                    placeholder='235mm'
-                    value={this.state.length}
-                    onChangeText={text => this.setState({ length: text })} />
-                <Field
-                    keyboardType='numeric'
-                    label='Niveau de graisse'
-                    placeholder='0.52%'
-                    value={this.state.lvl}
-                    onChangeText={text => this.setState({ lvl: text })} />
                 <View>
-                    <Text>Sexe</Text>
+                    <FormLabel>Nom latin</FormLabel>
+                    <FormInput
+                        keyboardType='default'
+                        placeholder='rougus gorus'
+                        value={this.state.latin_name}
+                        onChangeText={text => this.setState({ latin_name: text })} />
+                </View>
+                <View>
+                    <FormLabel>N° de la bague</FormLabel>
+                    <FormInput
+                        keyboardType='default'
+                        placeholder='XD428DX187D'
+                        value={this.state.ring_nbr}
+                        onChangeText={text => this.setState({ ring_nbr: text })} />
+                </View>
+                <View>
+                    <FormLabel>N° de série de la bague</FormLabel>
+                    <FormInput
+                        keyboardType='numeric'
+                        placeholder='85186245'
+                        value={this.state.ring_nbr_series}
+                        onChangeText={text => this.setState({ ring_nbr_series: text })} />
+                </View>
+                <View>
+                    <FormLabel>Longueur alair</FormLabel>
+                    <FormInput
+                        keyboardType='numeric'
+                        placeholder='235mm'
+                        value={this.state.length}
+                        onChangeText={text => this.setState({ length: text })} />
+                </View>
+                <View>
+                    <FormLabel>Niveau de graisse</FormLabel>
+                    <FormInput
+                        keyboardType='numeric'
+                        placeholder='0.52%'
+                        value={this.state.lvl}
+                        onChangeText={text => this.setState({ lvl: text })} />
+                </View>
+                <View>
+                    <FormLabel>Âge</FormLabel>
+                    <FormInput
+                        keyboardType='numeric'
+                        placeholder='35 ans'
+                        value={this.state.years}
+                        onChangeText={text => this.setState({ years: text })} />
+                </View>
+                <View>
+                    <Text style={{ marginLeft: 20, marginTop: 20, }}>Sexe</Text>
                     <RadioButtons
                         options={options}
                         onSelection={setSelectedOption.bind(this)}
@@ -223,24 +238,18 @@ class Detail extends Component {
                         })}
                     />
                 </View>
-                <Field
-                    keyboardType='numeric'
-                    label='Âge'
-                    placeholder='35ans'
-                    value={this.state.years}
-                    onChangeText={text => this.setState({ years: text })} />
                 <View>
                     <Button
+                        raised
+                        icon={{ name: 'update' }}
                         title='Ajouter loiseau'
-                        onPress={this.onButtonPress.bind(this)}>
-                    </Button>
+                        onPress={this.onButtonPress.bind(this)}
+                        backgroundColor="#2095f3"
+                        containerViewStyle={styles.btn} />
                 </View>
                 <Text>
                     {this.state.message}
                     {this.state.error}
-                </Text>
-                <Text>
-                    {this.state.birds}
                 </Text>
             </ScrollView>
         )
@@ -260,6 +269,15 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 10,
         color: '#ffffff',
+    },
+    btn: {
+        marginTop: 20,
+    },
+    marginItem: {
+        marginBottom: 20,
+        marginTop: 20,
+        marginRight: 20,
+        marginLeft: 20,
     }
 })
 

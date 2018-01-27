@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, StyleSheet, Button } from 'react-native'
+import { ScrollView, View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import firebase from 'firebase';
 import { CaptureCard } from './common/CaptureCard'
-
+import { ListItem, Button, List } from 'react-native-elements'
 class SearchProfile extends Component {
 
     constructor(props) {
@@ -37,13 +37,15 @@ class SearchProfile extends Component {
     }
 
     render() {
-        console.log(this.state.userCaptures)
         return (
             <ScrollView>
-                <Text>Le SearchProfile de {this.state.user.name}</Text>
-                <Text>Votre adresse email : {this.state.user.email}</Text>
-                <Text>Votre mot de passe: {this.state.user.password}</Text>
-
+                <List>
+                    <ListItem
+                        title={this.state.user.name}
+                        subtitle={this.state.user.email}
+                        rightIcon={{ name: "face" }}
+                    />
+                </List>
                 <View>
                     {this.renderCaptures()}
                 </View>

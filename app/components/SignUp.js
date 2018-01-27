@@ -3,14 +3,13 @@ import {
     View,
     Text,
     StyleSheet,
-    Button
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
-import { Field } from './common';
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import firebase from 'firebase';
+
+import { FormLabel, FormInput, Button, Icon } from 'react-native-elements'
 
 class SignUp extends Component {
 
@@ -72,28 +71,37 @@ class SignUp extends Component {
         const { routes } = this.context;
         return (
             <View>
-                <Field
-                    keyboardType="email-address"
-                    label='Nom complet'
-                    placeholder='Maxime Scibetta'
-                    value={this.state.name}
-                    onChangeText={text => this.setState({ name: text })} />
-                <Field
-                    keyboardType="email-address"
-                    label='Adresse email'
-                    placeholder='votreAdresse@email.com'
-                    value={this.state.email}
-                    onChangeText={text => this.setState({ email: text })} />
-                <Field
-                    keyboardType="default"
-                    secureTextEntry
-                    label='Mot de passe'
-                    placeholder='Entrez votre mot de passe'
-                    value={this.state.password}
-                    onChangeText={password => this.setState({ password })} />
-                <View style={styles.button}>         
-                   <Button title="S'inscrire" onPress={this.onSignup.bind(this)}></Button>
+                <View>
+                    <FormLabel>Nom complet</FormLabel>
+                    <FormInput
+                        keyboardType="default"
+                        placeholder='Votre nom complet...'
+                        value={this.state.name}
+                        onChangeText={text => this.setState({ name: text })} />
                 </View>
+                <View>
+                    <FormLabel>Adresse email</FormLabel>
+                    <FormInput
+                        keyboardType="email-address"
+                        placeholder='Votre adresse email...'
+                        value={this.state.email}
+                        onChangeText={text => this.setState({ email: text })} />
+                </View>
+                <View>
+                    <FormLabel>Mot de passe</FormLabel>
+                    <FormInput
+                        keyboardType="default"
+                        secureTextEntry
+                        placeholder='Votre mot de passe...'
+                        value={this.state.password}
+                        onChangeText={text => this.setState({ password: text})} />
+                </View>
+                <Button
+                    raised
+                    title="S'inscrire"
+                    onPress={this.onSignup.bind(this)}
+                    backgroundColor="#9c26b0"
+                    containerViewStyle={styles.button} />
                 <Text>
                     {this.state.message}
                     {this.state.error}
