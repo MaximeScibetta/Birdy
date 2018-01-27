@@ -43,7 +43,6 @@ class Search extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <ScrollView>
                 <View>

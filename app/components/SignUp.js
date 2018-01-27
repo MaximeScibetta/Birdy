@@ -67,7 +67,6 @@ class SignUp extends Component {
 
 
     render() {
-        console.log(this.state)
         const { routes } = this.context;
         return (
             <View>

@@ -141,7 +141,6 @@ class AddBirdForm extends Component {
                         onPress={(data, details = null) => { // 'details' is provided when fetchDetails = true
                             const location = details.geometry.location;
                             { this.setState({ where: location }) }
-                            console.log(this.state)
                         }}
 
                         query={{
