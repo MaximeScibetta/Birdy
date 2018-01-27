@@ -27,7 +27,6 @@ class Feed extends Component{
         )
     }
     render() {
-        // console.log(this.state)
         return (
             <ScrollView>
                 {this.renderCaptures()}
