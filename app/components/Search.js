@@ -3,12 +3,13 @@ import {
     View,
     Text,
     StyleSheet,
-    Button,
+    ScrollView,
 } from 'react-native';
 import { Field } from './common'
 import { CaptureCard } from './common/CaptureCard'
 import { connect } from 'react-redux';
 import { Actions, ActionConst } from 'react-native-router-flux';
+import { Card, ListItem, Button, List, SearchBar  } from 'react-native-elements'
 import firebase from 'firebase';
 
 class Search extends Component {
@@ -30,11 +31,11 @@ class Search extends Component {
     renderResults() {
         if (this.state.results.length != 0) {
             return Object.values(this.state.results).map((data, i) =>
-                <View>
-                    <Text>{data.name}</Text>
-                    <Text>{data.email}</Text>
-                    <Button title="voir le profil" onPress={() => Actions.searchprofile({ type: ActionConst.Type, user: data })}></Button>
-                </View>
+                <ListItem
+                    title={ data.name }
+                    subtitle={data.email}
+                    onPressRightIcon={() => Actions.searchprofile({ type: ActionConst.Type, user: data })}
+                />
             )
         } else {
             return <Text>Votre recherche n'a trouvé aucune utilisateur</Text>
@@ -44,20 +45,24 @@ class Search extends Component {
     render() {
         console.log(this.state)
         return (
-            <View>
-                <Field
-                    keyboardType="default"
-                    label='Recherche des utilisateurs'
-                    placeholder="Le nom exacte de l'utilistateur ..."
-                    value={this.state.query}
-                    onChangeText={text => this.setState({ query: text })} />
-                <Button
-                    title="Rechercher"
-                    onPress={() => this.searchUser()}>></Button>
+            <ScrollView>
                 <View>
-                    {this.renderResults()}
+                    <SearchBar
+                        value={this.state.query}
+                        onChangeText={text => this.setState({ query: text })}
+                        onClearText={text => this.setState({ query: text })}
+                        placeholder='Entrez votre recherche ...' />
+                    <Button
+                        raised
+                        title="Rechercher"
+                        onPress={() => this.searchUser()}
+                        backgroundColor="#2095f3"
+                        containerViewStyle={styles.btn} />
                 </View>
-            </View>
+                <List>
+                    {this.renderResults()}
+                </List>
+            </ScrollView>
         )
     }
 }
@@ -74,7 +79,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 10,
         color: '#ffffff',
-    }
+    },
+    btn: {
+        marginTop: 20,
+    },
 })
 
 export default connect(({ routes }) => ({ routes }))(Search)

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { ScrollView, View, Text, StyleSheet,Button } from 'react-native'
+import { ScrollView, View, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import { Actions } from 'react-native-router-flux'
 import firebase from 'firebase';
 import { CaptureCard } from '../common/CaptureCard'
+import { Card, ListItem, Button, List, SearchBar } from 'react-native-elements'
 
 class Profile extends Component {
 
@@ -44,19 +45,23 @@ class Profile extends Component {
     }
 
      render(){
-        console.log(this.state.myCaptures)
          return (
              <ScrollView>
-                <Text>Le profile de {this.state.user.name}</Text>
-                 <Text>Votre adresse email : {this.state.user.email}</Text>
-                 <Text>Votre mot de passe: {this.state.user.password}</Text>
+                 <List>
+                     <ListItem
+                         title={this.state.user.name}
+                         subtitle={this.state.user.email}
+                     />
+                 </List>
                 <Button
+                    raised
+                    title="Se deconnecter"
                     onPress={this.onButtonPress}
-                    title='Se deconnecter'>
-                </Button>
-                <View>
-                    {this.renderCaptures()}
-                </View>
+                    backgroundColor="#2095f3"
+                    containerViewStyle={styles.btn} />
+                 <View>
+                     {this.renderCaptures()}
+                 </View>
              </ScrollView>
          )
      }
@@ -75,6 +80,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 10,
         color: '#ffffff',
+    },
+    btn: {
+        marginTop: 20,
     }
 })
 
